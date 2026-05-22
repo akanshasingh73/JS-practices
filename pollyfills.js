@@ -1,6 +1,6 @@
 const array = [1, 2, 3];
 
-const output = array.map((x) => x * 5);
+const output = array.map((x, index, array) => x * 5);
 console.log(output);
 
 Array.prototype.myMap = function (cb) {
@@ -58,3 +58,6 @@ const output6 = array.myReduce((acc, curr) => {
 }, 0);
 
 console.log(output6);
+
+
+

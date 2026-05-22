@@ -1,15 +1,15 @@
 const withDups = [3, 1, 4, 3, 2, 1, 5];
 // output: [3, 1, 4, 2, 5];
 
-function removeDuplicate(array) {
-  const newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (!newArray.includes(array[i])) {
-      newArray.push(array[i]);
-    }
-  }
-  return newArray;
-}
+// function removeDuplicate(array) {
+//   const newArray = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (!newArray.includes(array[i])) {
+//       newArray.push(array[i]);
+//     }
+//   }
+//   return newArray;
+// }
 
 function removeDuplicate(array) {
  return array.filter((item, index) => {
@@ -18,9 +18,28 @@ function removeDuplicate(array) {
 }
 //indexOf use to check if an element is preset on array or not matches the index
 
-function removeDuplicate(array) {
-  return [...new Set(array)];
-}
+// function removeDuplicate(array) {
+//   return [...new Set(array)];
+// }
 // new Set(arr) runs in O(n).
 // filter + indexOf is O(n²), so stick with the Set approach for large lists.
 console.log(removeDuplicate(withDups));
+
+
+let arr = [1, 2, 2, 3, 4, 4, 5];
+let uniqueArr = [];
+
+for (let i = 0; i < arr.length; i++) {
+  let isDuplicate = false;
+  for (let j = 0; j < uniqueArr.length; j++) {
+    if (arr[i] === uniqueArr[j]) {
+      isDuplicate = true;
+      break;
+    }
+  }
+  if (!isDuplicate) {
+    uniqueArr.push(arr[i]);
+  }
+}
+
+console.log(uniqueArr);

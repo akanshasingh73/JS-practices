@@ -13,12 +13,15 @@ function getUserData() {
 }
 function getUserCart(user) {
   return new Promise((resolve) => {
+    console.log(user);
     resolve({ cartId: 'CART123', items: ['mobile', 'laptop'] });
   });
+  
 }
 
 function getDeliveryOptions(cart) {
   return new Promise((resolve) => {
+    console.log(cart)
     resolve(['Standard Delivery', 'Express Delivery']);
   });
 }
